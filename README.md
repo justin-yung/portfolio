@@ -1,6 +1,6 @@
 # Interactive Portfolio Website
 
-A modern, interactive portfolio website built with React, Tailwind CSS, and Framer Motion. This project is designed for job applications and recruiter engagement, featuring a professional tone with unique UI elements.
+A modern, interactive portfolio website built with React and Framer Motion. This project is designed for job applications and recruiter engagement, featuring a professional tone with unique UI elements.
 
 ## Features
 
@@ -23,7 +23,7 @@ A modern, interactive portfolio website built with React, Tailwind CSS, and Fram
 ## Technologies Used
 
 - **React**: Front-end library for building the user interface
-- **Tailwind CSS**: Utility-first CSS framework for styling
+- **Custom CSS**: Clean, maintainable styling
 - **Framer Motion**: Animation library for React
 - **EmailJS**: Email handling service for the contact form
 - **React Icons**: Icon library for visual elements
