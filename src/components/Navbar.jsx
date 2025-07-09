@@ -6,22 +6,29 @@ const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
+  const [isHomePage, setIsHomePage] = useState(true);
 
   const toggleNav = () => setNav(!nav);
 
   const sections = [
-    { id: 'home', label: '🏠 Home' },
-    { id: 'about', label: '👤 About Me' },
-    { id: 'experience', label: '💼 Experience' },
-    { id: 'projects', label: '🧪 Projects' },
-    { id: 'skills', label: '🛠 Skills' },
-    { id: 'contact', label: '✉️ Contact' },
+    { id: 'about', label: 'About Me' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'contact', label: 'Contact' },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       // Handle nav highlight based on scroll position
       const scrollPosition = window.scrollY;
+      
+      // Determine if we're on the home page (top of the page)
+      // Check if we're in the home section - above the first section in our sections array
+      const firstSectionElement = document.getElementById(sections[0].id);
+      if (firstSectionElement) {
+        setIsHomePage(scrollPosition < firstSectionElement.offsetTop - 100);
+      }
       
       // Make navbar background opaque after scrolling
       if (scrollPosition > 50) {
@@ -56,9 +63,9 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navbarClass = scrolled 
-    ? 'navbar navbar-scrolled'
-    : 'navbar';
+  const navbarClass = isHomePage 
+    ? (scrolled ? 'navbar navbar-scrolled black-navbar' : 'navbar black-navbar')
+    : (scrolled ? 'navbar navbar-scrolled' : 'navbar');
 
   return (
     <nav className={navbarClass}>

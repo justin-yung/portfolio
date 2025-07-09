@@ -13,16 +13,14 @@ const Skills = () => {
     { name: "Excel (Advanced)", level: 95 },
     { name: "Tableau", level: 80 },
     { name: "R", level: 65 },
-    { name: "JIRA", level: 85 },
-    { name: "Azure", level: 70 },
-    { name: "Google Analytics", level: 75 }
   ];
   
   // Languages
   const languages = [
-    { name: "English", level: "Native" },
-    { name: "Cantonese", level: "Conversational" },
-    { name: "Spanish", level: "Basic" }
+    { name: "English", level: "Fleunt" },
+    { name: "Cantonese", level: "Fleunt" },
+    { name: "Mandarin", level: "Fleunt" },
+    { name: "Japanese", level: "Basic" }
   ];
   
   // Interests
