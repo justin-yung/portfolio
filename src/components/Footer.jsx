@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <p className="footer-text">
-          &copy; {year} Your Name. Built with 
+          &copy; {year} Justin Yung. Built with 
           <FaHeart className="footer-icon" /> 
           using React
         </p>

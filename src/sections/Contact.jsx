@@ -108,17 +108,17 @@ const Contact = () => {
               className="space-y-4"
             >
               <a 
-                href="mailto:your.email@example.com" 
+                href="mailto:yungjustin806@gmail.com" 
                 className="flex items-center text-gray-700 hover:text-secondary transition-colors duration-300"
               >
                 <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mr-4">
                   <FaEnvelope className="text-primary text-xl" />
                 </div>
-                <span>your.email@example.com</span>
+                <span>yungjustin806@gmail.com</span>
               </a>
               
               <a 
-                href="https://linkedin.com/in/yourprofile" 
+                href="https://www.linkedin.com/in/justin-yung-277711226/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center text-gray-700 hover:text-secondary transition-colors duration-300"
@@ -126,11 +126,11 @@ const Contact = () => {
                 <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mr-4">
                   <FaLinkedin className="text-primary text-xl" />
                 </div>
-                <span>linkedin.com/in/yourprofile</span>
+                <span>LinkedIn</span>
               </a>
               
               <a 
-                href="https://github.com/yourusername" 
+                href="https://github.com/justin-yung" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center text-gray-700 hover:text-secondary transition-colors duration-300"
@@ -138,7 +138,7 @@ const Contact = () => {
                 <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mr-4">
                   <FaGithub className="text-primary text-xl" />
                 </div>
-                <span>github.com/yourusername</span>
+                <span>GitHub</span>
               </a>
             </motion.div>
           </motion.div>
