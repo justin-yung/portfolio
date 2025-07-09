@@ -36,14 +36,14 @@ const Projects = () => {
       tech: ["React", "TailwindCSS", "Framer Motion", "EmailJS"],
       objective: "Create an engaging, responsive portfolio website to showcase professional experience and technical skills to potential employers",
       details: "Designed and implemented a responsive, animated website with interactive elements. Used modern React practices and animation libraries for a smooth user experience.",
-      github: "https://github.com/yourusername/portfolio-website",
+      github: "https://github.com/justin-yung/portfolio-v2",
       impact: "Increased recruiter engagement and improved personal brand visibility online",
       type: "personal"
     },
     {
       id: 4,
-      title: "UQ Capstone Course - Information Analysis & System Design",
-      summary: "Mobile application prototype design for university capstone project",
+      title: "BISM32222: Information Analysis & System Design",
+      summary: "UQ Capstone Course: Addressing Sustainable Development Goal 15.4 - Ensure Conservation of Mountain Ecosystems; designed a mobile application prototype and implementation plan.",
       tech: ["Adobe XD", "Miro Board", "User Story Mapping", "Wireframing"],
       objective: "Design and prototype a mobile application based on user needs and functional requirements for the BISM3222 Information Analysis and System Design course",
       details: "Developed comprehensive user stories and wireframes aligned to user needs. Created interactive mobile prototypes using Adobe XD and used Miro Board for collaborative brainstorming and agile planning methodology.",
