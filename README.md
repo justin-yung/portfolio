@@ -40,7 +40,7 @@ A modern, interactive portfolio website built with React and Framer Motion. This
 
 1. Clone the repository
    ```
-   git clone https://github.com/yourusername/portfolio-v2.git
+   git clone https://github.com/justin-yung/portfolio-v2.git
    ```
 
 2. Navigate to the project directory
@@ -75,7 +75,7 @@ Update the following files to personalize your portfolio:
 
 ### Styling
 
-The project uses Tailwind CSS for styling. The main theme colors can be adjusted in `tailwind.config.js`.
+The project uses custom CSS for styling. The main theme colors can be adjusted in `src/App.css`.
 
 ### Email Integration
 
