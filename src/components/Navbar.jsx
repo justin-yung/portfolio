@@ -69,7 +69,11 @@ const Navbar = () => {
           transition={{ duration: 0.5 }}
           className="navbar-logo"
         >
-          <a href="#home">PORTFOLIO</a>
+          <a href="#home">
+            <div className="logo-circle">
+              <span className="logo-chinese">正</span>
+            </div>
+          </a>
         </motion.div>
 
         {/* Desktop Menu */}

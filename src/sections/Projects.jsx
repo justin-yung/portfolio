@@ -3,42 +3,32 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaTools, FaCode, FaLightbulb, FaChartLine } from 'react-icons/fa';
 
 const Projects = () => {
-  const [expandedProject, setExpandedProject] = useState(null);
+  const [expandedProjects, setExpandedProjects] = useState({});
 
   // Sample project data
   const projects = [
     {
       id: 1,
       title: "Retail Analytics Dashboard",
-      summary: "Interactive sales performance visualization tool for retail business",
+      summary: "Interactive sales performance visualisation tool for retail business",
       tech: ["Power BI", "SQL", "Python", "DAX"],
       objective: "Develop a comprehensive analytics solution to track KPIs, sales trends, and inventory management for a retail chain with 50+ locations",
-      details: "Created a multi-page interactive dashboard with drill-down capabilities, automated data refresh, and custom visualizations. Implemented DAX measures for complex calculations and used Python for data preprocessing.",
+      details: "Created a multi-page interactive dashboard with drill-down capabilities, automated data refresh, and custom visualisations. Implemented DAX measures for complex calculations and used Python for data preprocessing.",
       github: "https://github.com/yourusername/retail-analytics",
-      impact: "Reduced reporting time by 80% and helped identify $300K in inventory optimization opportunities"
+      impact: "Reduced reporting time by 80% and helped identify $300K in inventory optimisation opportunities"
     },
     {
       id: 2,
-      title: "Customer Segmentation Model",
-      summary: "Machine learning solution for targeted marketing campaigns",
-      tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
-      objective: "Develop a customer segmentation model to improve marketing campaign effectiveness and personalization",
-      details: "Applied K-means clustering and RFM analysis to segment customers based on purchase behavior. Built interactive visualization tools to communicate findings to stakeholders and marketing teams.",
-      github: "https://github.com/yourusername/customer-segmentation",
-      impact: "Improved campaign conversion rates by 32% and reduced customer acquisition costs by 18%"
-    },
-    {
-      id: 3,
       title: "Process Automation Suite",
       summary: "End-to-end automation solution for financial reporting",
       tech: ["Python", "Excel VBA", "SQL", "Power Automate"],
       objective: "Automate manual financial reporting processes to reduce errors and free up analyst time for value-added activities",
-      details: "Developed a suite of tools to extract data from multiple sources, transform and validate it, and generate standardized reports. Implemented error handling and notification systems.",
+      details: "Developed a suite of tools to extract data from multiple sources, transform and validate it, and generate standardised reports. Implemented error handling and notification systems.",
       github: "https://github.com/yourusername/process-automation",
       impact: "Saved 25+ hours per week and eliminated 95% of manual data entry errors"
     },
     {
-      id: 4,
+      id: 3,
       title: "Interactive Portfolio Website",
       summary: "Modern web application to showcase professional skills and projects",
       tech: ["React", "TailwindCSS", "Framer Motion", "EmailJS"],
@@ -46,6 +36,28 @@ const Projects = () => {
       details: "Designed and implemented a responsive, animated website with interactive elements. Used modern React practices and animation libraries for a smooth user experience.",
       github: "https://github.com/yourusername/portfolio-website",
       impact: "Increased recruiter engagement and improved personal brand visibility online"
+    },
+    {
+      id: 4,
+      title: "UQ Capstone Course - Information Analysis & System Design",
+      summary: "Mobile application prototype design for university capstone project",
+      tech: ["Adobe XD", "Miro Board", "User Story Mapping", "Wireframing"],
+      objective: "Design and prototype a mobile application based on user needs and functional requirements for the BISM3222 Information Analysis and System Design course",
+      details: "Developed comprehensive user stories and wireframes aligned to user needs. Created interactive mobile prototypes using Adobe XD and used Miro Board for collaborative brainstorming and agile planning methodology.",
+      github: null,
+      demo: null,
+      externalLinks: [
+        {
+          title: "Adobe XD Prototype",
+          url: "https://xd.adobe.com/view/0b4d83fd-ecb9-4c52-83ac-07ee383c93df-5e1e/"
+        },
+        {
+          title: "Miro Board",
+          url: "https://miro.com/app/board/uXjVPjM58D8=/"
+        }
+      ],
+      period: "Feb 2023 - Jul 2023",
+      impact: "Delivered a high-fidelity prototype that received excellent feedback from stakeholders and course instructors"
     }
   ];
 
@@ -65,11 +77,10 @@ const Projects = () => {
   };
 
   const toggleProject = (id) => {
-    if (expandedProject === id) {
-      setExpandedProject(null);
-    } else {
-      setExpandedProject(id);
-    }
+    setExpandedProjects((prev) => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
   };
 
   return (
@@ -116,10 +127,10 @@ const Projects = () => {
                 onClick={() => toggleProject(project.id)}
                 className="text-secondary font-medium hover:underline focus:outline-none"
               >
-                {expandedProject === project.id ? 'Show Less' : 'Show More'}
+                {expandedProjects[project.id] ? 'Show Less' : 'Show More'}
               </button>
               
-              {expandedProject === project.id && (
+              {expandedProjects[project.id] && (
                 <motion.div 
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
@@ -179,6 +190,19 @@ const Projects = () => {
                           <span>Live Demo</span>
                         </a>
                       )}
+                      
+                      {project.externalLinks && project.externalLinks.map((link, index) => (
+                        <a 
+                          key={index}
+                          href={link.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center text-primary hover:text-secondary transition-colors duration-300 ml-4"
+                        >
+                          <FaExternalLinkAlt className="mr-1" />
+                          <span>{link.title}</span>
+                        </a>
+                      ))}
                     </div>
                   </div>
                 </motion.div>

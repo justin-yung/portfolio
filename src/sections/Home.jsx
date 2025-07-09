@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import profileImage from '../assets/profile-image.jpg';
 
 const Home = () => {
   return (
@@ -9,23 +10,28 @@ const Home = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
+            className="content-container"
           >
-            <motion.h1 
-              className="home-title"
+            <motion.div 
+              className="name-container"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Justin Yung
-            </motion.h1>
+              <h1 className="home-name">Justin Yung</h1>
+              <div className="chinese-name-container">
+                <h2 className="chinese-name">翁正</h2>
+                <p className="phonetic-name">/jung1 zeng3/</p>
+              </div>
+            </motion.div>
             
             <motion.h2 
-              className="home-subtitle"
+              className="home-title"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Business Analyst | Data Enthusiast | Problem Solver
+              Business Analyst | Data Reporting
             </motion.h2>
             
             <motion.p 
@@ -34,8 +40,8 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Transforming complex data into meaningful insights and business solutions.
-              Passionate about driving digital transformation through data-driven decision making.
+              Motivated to build a career in the analytical space by applying data-driven thinking, process optimisation, and stakeholder collaboration. 
+              Eager to contribute to business decision-making through actionable insights and continuous improvement.
             </motion.p>
             
             <motion.div
@@ -44,7 +50,7 @@ const Home = () => {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="home-buttons"
             >
-              <a href="#contact" className="btn btn-primary">Get In Touch</a>
+              <a href="#about" className="btn btn-primary">More About Me</a>
               <a href="#projects" className="btn btn-secondary">View Projects</a>
             </motion.div>
           </motion.div>
@@ -61,10 +67,9 @@ const Home = () => {
             <div className="profile-image-wrapper">
               <div className="profile-image-glow"></div>
               <div className="profile-image-border">
-                {/* Replace with your profile image */}
                 <img 
-                  src="https://via.placeholder.com/400x400" 
-                  alt="Profile"
+                  src={profileImage} 
+                  alt="Justin Yung"
                   className="profile-image"
                 />
               </div>

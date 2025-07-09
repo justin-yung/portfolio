@@ -29,7 +29,7 @@ const Skills = () => {
   const interests = [
     "Data Storytelling", 
     "Digital Transformation", 
-    "Process Optimization",
+    "Process Optimisation",
     "Business Intelligence",
     "Data-driven Decision Making",
     "Predictive Analytics"
