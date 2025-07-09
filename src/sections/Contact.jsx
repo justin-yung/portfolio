@@ -71,14 +71,18 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="section-container">
-        <motion.h2 
-          className="section-title text-center mb-16"
+        <motion.div
+          className="flex justify-center mb-10"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          ✉️ Contact
-        </motion.h2>
+          <div className="section-header-container">
+            <h2 className="section-title text-center text-xl font-bold uppercase double-underline">
+              CONTACT ME
+            </h2>
+          </div>
+        </motion.div>
         
         <div className="grid md:grid-cols-2 gap-10">
           {/* Contact Information */}
@@ -93,7 +97,7 @@ const Contact = () => {
               variants={itemVariants}
               className="text-2xl font-bold text-primary mb-6"
             >
-              Let's Connect
+              Let's Connect!
             </motion.h3>
             
             <motion.p 
@@ -107,39 +111,45 @@ const Contact = () => {
               variants={itemVariants}
               className="space-y-4"
             >
-              <a 
-                href="mailto:yungjustin806@gmail.com" 
-                className="flex items-center text-gray-700 hover:text-secondary transition-colors duration-300"
-              >
+              <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mr-4">
                   <FaEnvelope className="text-primary text-xl" />
                 </div>
-                <span>yungjustin806@gmail.com</span>
-              </a>
+                <a 
+                  href="mailto:yungjustin806@gmail.com" 
+                  className="text-gray-700 hover:text-secondary transition-colors duration-300"
+                >
+                  <span>yungjustin806@gmail.com</span>
+                </a>
+              </div>
               
-              <a 
-                href="https://www.linkedin.com/in/justin-yung-277711226/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center text-gray-700 hover:text-secondary transition-colors duration-300"
-              >
+              <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mr-4">
                   <FaLinkedin className="text-primary text-xl" />
                 </div>
-                <span>LinkedIn</span>
-              </a>
+                <a 
+                  href="https://www.linkedin.com/in/justin-yung-277711226/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-700 hover:text-secondary transition-colors duration-300"
+                >
+                  <span>LinkedIn</span>
+                </a>
+              </div>
               
-              <a 
-                href="https://github.com/justin-yung" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center text-gray-700 hover:text-secondary transition-colors duration-300"
-              >
+              <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mr-4">
                   <FaGithub className="text-primary text-xl" />
                 </div>
-                <span>GitHub</span>
-              </a>
+                <a 
+                  href="https://github.com/justin-yung" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-700 hover:text-secondary transition-colors duration-300"
+                >
+                  <span>GitHub</span>
+                </a>
+              </div>
             </motion.div>
           </motion.div>
           

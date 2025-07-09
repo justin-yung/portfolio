@@ -38,21 +38,15 @@ const Skills = () => {
   // Certifications
   const certifications = [
     { 
-      name: "Google Data Analytics Professional Certificate", 
-      issuer: "Google", 
-      year: 2023,
-      credential: "https://www.credential.net/sample-credential"
+      name: "Entry Certificate in Business Analysis™ (ECBA)", 
+      issuer: "International Institute of Business Analysis (IIBA)", 
+      year: 2025,
+      credential: "https://badges.iiba.org/4f6815cc-c1c2-4a2b-8569-22ef80928d08"
     },
     { 
       name: "Microsoft Certified: Data Analyst Associate", 
       issuer: "Microsoft", 
       year: 2022,
-      credential: "https://www.credential.net/sample-credential"
-    },
-    { 
-      name: "Tableau Desktop Specialist", 
-      issuer: "Tableau", 
-      year: 2021,
       credential: "https://www.credential.net/sample-credential"
     }
   ];
@@ -75,14 +69,18 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 bg-gray-50">
       <div className="section-container">
-        <motion.h2 
-          className="section-title text-center mb-16"
+        <motion.div
+          className="flex justify-center mb-10"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          🛠 Skills
-        </motion.h2>
+          <div className="section-header-container">
+            <h2 className="section-title text-center text-xl font-bold uppercase double-underline">
+              SKILLS
+            </h2>
+          </div>
+        </motion.div>
         
         <div className="grid md:grid-cols-2 gap-10">
           {/* Technical Skills */}
@@ -192,15 +190,17 @@ const Skills = () => {
                       <span className="text-gray-600">{cert.issuer}</span>
                       <span className="text-gray-500">{cert.year}</span>
                     </div>
-                    <a 
-                      href={cert.credential}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center mt-2 text-secondary hover:underline"
-                    >
-                      <FaStar className="mr-1" size={14} />
-                      <span className="text-sm">View Credential</span>
-                    </a>
+                    <div className="mt-4">
+                      <a 
+                        href={cert.credential}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-secondary hover:underline"
+                      >
+                        <FaStar className="mr-1" size={14} />
+                        <span className="text-sm">View Credential</span>
+                      </a>
+                    </div>
                   </motion.div>
                 ))}
               </div>

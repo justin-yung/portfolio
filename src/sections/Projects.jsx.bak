@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaTools, FaCode, FaLightbulb, FaChartLine, FaGraduationCap, FaChartBar } from 'react-icons/fa';
 
@@ -343,6 +343,154 @@ const Projects = () => {
                     </motion.div>
                   )}
                 </motion.div>
+              ))
+            }
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
+        <motion.div 
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 'auto' }}
+          transition={{ duration: 0.3 }}
+          className="mt-4"
+        >
+          <div className="border-t border-gray-200 pt-4">
+            <div className="mb-4">
+              <div className="flex items-start mb-2">
+                <FaLightbulb className="text-secondary mr-2 mt-1" />
+                <div>
+                  <span className="font-medium text-gray-700">Objective:</span>
+                  <p className="text-gray-700">{project.objective}</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mb-4">
+              <div className="flex items-start mb-2">
+                <FaCode className="text-secondary mr-2 mt-1" />
+                <div>
+                  <span className="font-medium text-gray-700">Details:</span>
+                  <p className="text-gray-700">{project.details}</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mb-4">
+              <div className="flex items-start mb-2">
+                <FaChartLine className="text-secondary mr-2 mt-1" />
+                <div>
+                  <span className="font-medium text-gray-700">Impact:</span>
+                  <p className="text-gray-700">{project.impact}</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex items-center">
+              {project.github && (
+                <a 
+                  href={project.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center mr-4 text-primary hover:text-secondary transition-colors duration-300"
+                >
+                  <FaGithub className="mr-1" />
+                  <span>GitHub Repo</span>
+                </a>
+              )}
+              
+              {project.demo && (
+                <a 
+                  href={project.demo} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center text-primary hover:text-secondary transition-colors duration-300"
+                >
+                  <FaExternalLinkAlt className="mr-1" />
+                  <span>Live Demo</span>
+                </a>
+              )}
+              
+              {project.externalLinks && project.externalLinks.map((link, index) => (
+                <a 
+                  key={index}
+                  href={link.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center text-primary hover:text-secondary transition-colors duration-300 ml-4"
+                >
+                  <FaExternalLinkAlt className="mr-1" />
+                  <span>{link.title}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </motion.div>
+  );
+
+  return (
+    <section id="projects" className="py-20 bg-white">
+      <div className="section-container">
+        <motion.div
+          className="flex justify-center mb-10"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="section-header-container">
+            <h2 className="section-title text-center text-xl font-bold uppercase double-underline">
+              PROJECTS
+            </h2>
+          </div>
+        </motion.div>
+        
+        {/* Academic Projects */}
+        <div className="mb-16">
+          <div className="flex items-center mb-8">
+            <FaGraduationCap className="text-secondary text-2xl mr-3" />
+            <h3 className="text-2xl font-bold text-primary">Academic Projects</h3>
+          </div>
+          
+          <motion.div 
+            className="grid md:grid-cols-2 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            {projects
+              .filter(project => project.type === "academic")
+              .map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))
+            }
+          </motion.div>
+        </div>
+        
+        {/* Personal BA Projects */}
+        <div>
+          <div className="flex items-center mb-8">
+            <FaChartBar className="text-secondary text-2xl mr-3" />
+            <h3 className="text-2xl font-bold text-primary">Personal BA Projects</h3>
+          </div>
+          
+          <motion.div 
+            className="grid md:grid-cols-2 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            {projects
+              .filter(project => project.type === "personal")
+              .map((project) => (
+                <ProjectCard key={project.id} project={project} />
               ))
             }
           </motion.div>

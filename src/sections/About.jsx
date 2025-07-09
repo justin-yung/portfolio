@@ -80,14 +80,18 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-white">
       <div className="section-container">
-        <motion.h2 
-          className="section-title text-center mb-16"
+        <motion.div
+          className="flex justify-center mb-10"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          👤 About Me
-        </motion.h2>
+          <div className="section-header-container">
+            <h2 className="section-title text-center text-xl font-bold uppercase double-underline">
+              ABOUT ME
+            </h2>
+          </div>
+        </motion.div>
         
         <motion.div 
           className="grid md:grid-cols-2 gap-12"

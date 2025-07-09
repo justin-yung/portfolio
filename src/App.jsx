@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import './App.css';
+import './styles/SectionHeaders.css';
 import Navbar from './components/Navbar';
 import Home from './sections/Home';
 import About from './sections/About';
