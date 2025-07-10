@@ -1,9 +1,9 @@
 {
-  "name": "portfolio-v2",
+  "name": "portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://justinyung.com",
+  "homepage": "https://justin-yung.github.io/portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
