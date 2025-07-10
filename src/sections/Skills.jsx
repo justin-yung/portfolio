@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { 
-  FaDatabase, FaChartBar, FaLaptopCode, FaLanguage, 
-  FaCertificate, FaStar, FaLightbulb, FaUsers, FaTrophy
+  FaLaptopCode, FaLanguage, 
+  FaCertificate, FaStar, FaUsers
 } from 'react-icons/fa';
 
 const Skills = () => {

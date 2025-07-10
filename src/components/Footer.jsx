@@ -1,5 +1,3 @@
-import { FaHeart } from 'react-icons/fa';
-
 const Footer = () => {
   const year = new Date().getFullYear();
   

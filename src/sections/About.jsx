@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaMapMarkerAlt, FaPassport, FaLightbulb, FaUsers, FaTrophy, FaTimes } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPassport, FaTimes } from 'react-icons/fa';
 import { useState } from 'react';
 
 const About = () => {

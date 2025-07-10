@@ -1,6 +1,6 @@
 ﻿import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaTools, FaCode, FaLightbulb, FaChartLine, FaGraduationCap, FaChartBar } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaTools, FaLightbulb, FaChartLine } from 'react-icons/fa';
 
 const Projects = () => {
   const [expandedProjects, setExpandedProjects] = useState({});
