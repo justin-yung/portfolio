@@ -18,10 +18,10 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 pb-36 bg-white contact-section-bg">
-      <div className="section-container relative z-10">
+    <section id="contact" className="py-20 pb-32 bg-white">
+      <div className="section-container">
         <motion.div
-          className="flex justify-center mb-16"
+          className="flex justify-center mb-10"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -33,7 +33,6 @@ const Contact = () => {
           </div>
         </motion.div>
         
-        {/* Contact Information */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -41,47 +40,57 @@ const Contact = () => {
           viewport={{ once: true, amount: 0.1 }}
           className="flex flex-col items-center"
         >
+          <p className="text-center text-gray-700 mb-6 max-w-xl">
+            I'm always open to discussing new opportunities and collaborations. Feel free to reach out through any of the channels below.
+          </p>
+          
           <motion.div
             variants={itemVariants}
-            className="flex flex-row flex-wrap justify-center items-start gap-6 md:gap-12 w-full"
+            className="contact-cards-container"
           >
-            <div className="contact-icon-container flex flex-col items-center">
+            <div className="contact-card">
+              <div className="contact-card-header">
+                <FaEnvelope className="contact-card-icon" />
+                <h3 className="contact-card-title">Email</h3>
+              </div>
+              <p className="contact-card-text">yungjustin806@gmail.com</p>
               <a 
                 href="mailto:yungjustin806@gmail.com" 
-                className="text-gray-700 hover:text-secondary transition-colors duration-300 flex flex-col items-center"
+                className="contact-card-button"
               >
-                <div className="rounded-full bg-gray-100 flex items-center justify-center mb-5 contact-icon-bg">
-                  <FaEnvelope className="text-primary contact-icon" />
-                </div>
-                <span className="font-medium">Email</span>
+                Send Email
               </a>
             </div>
             
-            <div className="contact-icon-container flex flex-col items-center">
+            <div className="contact-card">
+              <div className="contact-card-header">
+                <FaLinkedin className="contact-card-icon" />
+                <h3 className="contact-card-title">LinkedIn</h3>
+              </div>
+              <p className="contact-card-text">Connect with me on LinkedIn</p>
               <a 
                 href="https://www.linkedin.com/in/justin-yung-277711226/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-700 hover:text-secondary transition-colors duration-300 flex flex-col items-center"
+                className="contact-card-button"
               >
-                <div className="rounded-full bg-gray-100 flex items-center justify-center mb-5 contact-icon-bg">
-                  <FaLinkedin className="text-primary contact-icon" />
-                </div>
-                <span className="font-medium">LinkedIn</span>
+                View Profile
               </a>
             </div>
             
-            <div className="contact-icon-container flex flex-col items-center">
+            <div className="contact-card">
+              <div className="contact-card-header">
+                <FaGithub className="contact-card-icon" />
+                <h3 className="contact-card-title">GitHub</h3>
+              </div>
+              <p className="contact-card-text">Check out my code repositories</p>
               <a 
                 href="https://github.com/justin-yung" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-700 hover:text-secondary transition-colors duration-300 flex flex-col items-center"
+                className="contact-card-button"
               >
-                <div className="rounded-full bg-gray-100 flex items-center justify-center mb-5 contact-icon-bg">
-                  <FaGithub className="text-primary contact-icon" />
-                </div>
-                <span className="font-medium">GitHub</span>
+                View GitHub
               </a>
             </div>
           </motion.div>

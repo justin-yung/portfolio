@@ -20,14 +20,6 @@ const About = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
   };
   
-  // Leadership qualities
-  const leadershipQualities = [
-    { icon: <FaLightbulb />, text: "Strategic Thinking" },
-    { icon: <FaUsers />, text: "Team Mentorship" },
-    { icon: <FaTrophy />, text: "Results-Driven" },
-    { icon: <FaTrophy />, text: "Autonomy" },
-  ];
-  
   // Interests with descriptions
   const interests = [
     { 
@@ -103,29 +95,13 @@ const About = () => {
           {/* Left Column - Professional Summary */}
           <motion.div variants={itemVariants}>
             <h3 className="text-2xl font-bold mb-4 text-primary">Professional Summary</h3>
-            <p className="text-gray-700 mb-6 leading-relaxed">
+            <p className="text-gray-700 mb-6 leading-relaxed text-lg">
             Analytical and results-driven Operations Support Analyst with hands-on experience in <b>SQL, Power BI, and stakeholder engagement</b>. 
             Professionally certified in Business Analysis (ECBA®) and a Bachelor of Commerce graduate from The University of Queensland, majoring in Business Information Systems and Finance. 
             Proven ability to <b>optimise business processes, lead cross-functional teams, </b>and<b> deliver data-driven insights</b> to support operational decision-making. 
             Demonstrated success in procurement operations, cost reduction initiatives, and stakeholder communication. 
             Fluent in English, Mandarin, and Cantonese, with strong technical and interpersonal skills to support scalable and efficient business outcomes.
             </p>
-            
-            {/* Leadership Qualities */}
-            <h3 className="text-2xl font-bold mb-4 text-primary">Leadership Qualities</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-              {leadershipQualities.map((quality, index) => (
-                <div 
-                  key={index}
-                  className="flex items-center p-4 rounded-lg bg-gray-50 shadow-sm"
-                >
-                  <div className="text-secondary text-xl mr-3">
-                    {quality.icon}
-                  </div>
-                  <span className="text-gray-700">{quality.text}</span>
-                </div>
-              ))}
-            </div>
           </motion.div>
           
           {/* Right Column - Things I Love & Location */}

@@ -7,12 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <p className="footer-text">
-          &copy; {year} Justin Yung. Built with 
-          <FaHeart className="footer-icon" /> 
-          using React
-        </p>
-        <p className="footer-copyright">
-          All rights reserved
+          &copy; {year} Justin Yung. All rights reserved.
         </p>
       </div>
     </footer>
