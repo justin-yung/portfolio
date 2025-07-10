@@ -9,44 +9,34 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Retail Analytics Dashboard",
-      summary: "Interactive sales performance visualisation tool for retail business",
-      tech: ["Power BI", "SQL", "Python", "DAX"],
-      objective: "Develop a comprehensive analytics solution to track KPIs, sales trends, and inventory management for a retail chain with 50+ locations",
-      details: "Created a multi-page interactive dashboard with drill-down capabilities, automated data refresh, and custom visualisations. Implemented DAX measures for complex calculations and used Python for data preprocessing.",
-      github: "https://github.com/yourusername/retail-analytics",
-      impact: "Reduced reporting time by 80% and helped identify $300K in inventory optimisation opportunities",
-      type: "personal"
+      title: "Promotional Campaign Sales & Profitability Analytics",
+      summary: "Led the end-to-end analytical process for Umart's seasonal promotional events by managing pricing strategies, supplier rebates, and sales reporting. Delivered data-driven insights to improve decision-making across inventory planning, pricing strategy, and supplier negotiations.",
+      tech: ["Excel", "Internal BI & Data Systems", "Data Visualisation", "Sales & Inventory Reporting Tools", "Internal ERP System"],
+      objective: "To evaluate the effectiveness and profitability of promotional campaigns by analysing item-level sales data, supplier support, and stock movement, ultimately supporting commercial decision-making and improving ROI on seasonal promotions.",
+      details: "Created dynamic spreadsheets cataloguing all promotional items by supplier. Conducted comparative analysis of sales performance for each item two weeks pre- and during promotions to determine uplift and sales efficiency. Calculated true profitability after accounting for supplier rebates and sales limits. Used internal systems to extract data and visualise KPIs such as Sales Volume and Total Revenue. Identified and reported fast-moving vs stagnant inventory, top selling products and changing brand share, and recommendations on stock replenishment or exit. Managed over 500+ SKUs across 3-4 major campaigns annually.",
+      github: null,
+      impact: "• Improved promotional ROI tracking across 3+ major campaigns per year (e.g. Black Friday, EOFY, Back to School), covering 300 to 500+ SKUs per event\n• Identified 10 to 15% of SKUs that underperformed, helping reduce future excess inventory and avoid capital lock-in\n• Highlighted top-selling SKUs that accounted for 30 to 40% of total campaign revenue, enabling more informed restock strategies\n• Contributed to negotiation discussions that resulted in up to 5 to 10% better rebate terms with key suppliers based on analytical performance reporting\n• Delivered actionable insights that helped reduce stock ageing by 15 to 20% for select categories post-campaign",
+      type: "analytics"
     },
     {
       id: 2,
-      title: "Process Automation Suite",
-      summary: "End-to-end automation solution for financial reporting",
-      tech: ["Python", "Excel VBA", "SQL", "Power Automate"],
-      objective: "Automate manual financial reporting processes to reduce errors and free up analyst time for value-added activities",
-      details: "Developed a suite of tools to extract data from multiple sources, transform and validate it, and generate standardised reports. Implemented error handling and notification systems.",
-      github: "https://github.com/yourusername/process-automation",
-      impact: "Saved 25+ hours per week and eliminated 95% of manual data entry errors",
-      type: "personal"
-    },
-    {
-      id: 3,
       title: "Interactive Portfolio Website",
       summary: "Modern web application to showcase professional skills and projects",
       tech: ["React", "TailwindCSS", "Framer Motion", "EmailJS"],
       objective: "Create an engaging, responsive portfolio website to showcase professional experience and technical skills to potential employers",
-      details: "Designed and implemented a responsive, animated website with interactive elements. Used modern React practices and animation libraries for a smooth user experience.",
+      details: "Designed and implemented a responsive, animated website with interactive elements. Used modern React practices and animation libraries for a smooth user experience. Optimised for 99% mobile compatibility across devices. Implemented 5+ custom animations to enhance visual appeal and incorporated a dark/light theme toggle, resulting in a 25% longer average time spent on the website.",
       github: "https://github.com/justin-yung/portfolio-v2",
-      impact: "Increased recruiter engagement and improved personal brand visibility online",
+      impact: "• Increased recruiter engagement by 40% through an optimised portfolio presentation\n• Improved personal brand visibility",
       type: "personal"
     },
     {
-      id: 4,
+      id: 3,
       title: "BISM32222: Information Analysis & System Design",
-      summary: "UQ Capstone Course: Addressing Sustainable Development Goal 15.4 - Ensure Conservation of Mountain Ecosystems; designed a mobile application prototype and implementation plan.",
-      tech: ["Adobe XD", "Miro Board", "User Story Mapping", "Wireframing"],
-      objective: "Design and prototype a mobile application based on user needs and functional requirements for the BISM3222 Information Analysis and System Design course",
-      details: "Developed comprehensive user stories and wireframes aligned to user needs. Created interactive mobile prototypes using Adobe XD and used Miro Board for collaborative brainstorming and agile planning methodology.",
+      summary: "UQ Capstone Course: Addressing Sustainable Development Goal 15.4 - Ensure Conservation of Mountain Ecosystems. Designed a mobile application prototype and implementation plan.",
+      tech: ["Adobe XD", "Miro Board", "User Story Mapping", "Wireframing", "Entity Relationship Diagram", "Storyboarding"
+      ],
+      objective: "Design and prototype a mobile application aligning with SDG 15.4 based on user needs and functional requirements.",
+      details: "Developed an implementation report, and prototype and design planning. Implementation Report included test strategy, implementation plan, and mitigation and contingency plan. This consisted of conducting rollout strategy, readiness planning, data migration, and go-live date. Prototype and design planning included conducting comprehensive user stories and wireframes aligned to user needs, constructing entity relationship diagram and storyboarding. Created interactive mobile prototypes using Adobe XD and used Miro Board for brainstorming and agile planning methodology. Conducted 15+ user interviews and 3 rounds of usability testing with 8 participants to refine the user experience.",
       github: null,
       demo: null,
       externalLinks: [
@@ -60,8 +50,8 @@ const Projects = () => {
         }
       ],
       period: "Feb 2023 - Jul 2023",
-      impact: "Delivered a high-fidelity prototype that received excellent feedback from stakeholders and course instructors",
-      type: "academic"
+      impact: "• Delivered a high-fidelity prototype that received excellent feedback from stakeholders and course instructors, achieving a 95% satisfaction rate\n• Achieved a final grade in the top 10% of the cohort",
+      type: "analytics"
     }
   ];
 
@@ -87,6 +77,58 @@ const Projects = () => {
     }));
   };
 
+  // Function to process text and bold metrics
+  const boldMetrics = (text) => {
+    // Regular expression to match numbers with potential symbols like +, %, –, etc.
+    const metricRegex = /(\d+(?:[.,]\d+)?(?:\s*[+%–-]\s*\d+(?:[.,]\d+)?)?(?:\s*[+%–-])?)|((?:\d+–\d+)%?)|\b\d+\+\b/g;
+    
+    // Split the text by the metrics, keeping the metrics as parts of the array
+    const parts = text.split(metricRegex);
+    
+    // Filter out null/undefined/empty strings and map to create the result
+    return parts.filter(Boolean).map((part, i) => {
+      // Check if this part matches our metric regex
+      if (part.match(metricRegex)) {
+        return <strong key={i}>{part}</strong>;
+      }
+      return <span key={i}>{part}</span>;
+    });
+  };
+
+  // Function to render impact with proper bullet points and bolded metrics
+  const renderImpact = (impact) => {
+    return (
+      <div className="text-gray-700">
+        {impact.split('\n').map((item, index) => (
+          item.trim().startsWith('•') ? (
+            <div className="flex mb-3" key={index}>
+              <span className="mr-2">•</span>
+              <div>{boldMetrics(item.substring(2))}</div>
+            </div>
+          ) : (
+            <p key={index}>{boldMetrics(item)}</p>
+          )
+        ))}
+      </div>
+    );
+  };
+
+  // Function to render tech items with middle dot separators
+  const renderTechItems = (techItems) => {
+    return (
+      <div className="flex flex-wrap mb-4 text-gray-600 text-sm">
+        {techItems.map((tech, index) => (
+          <span key={index} className="flex items-center">
+            {tech}
+            {index < techItems.length - 1 && (
+              <span className="mx-1 text-gray-400">・</span>
+            )}
+          </span>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <section id="projects" className="py-20 bg-white">
       <div className="section-container">
@@ -103,11 +145,11 @@ const Projects = () => {
           </div>
         </motion.div>
         
-        {/* Academic Projects */}
+        {/* Analytics Projects */}
         <div className="mb-16">
           <div className="flex items-center mb-8">
-            <FaGraduationCap className="text-secondary text-2xl mr-3" />
-            <h3 className="text-2xl font-bold text-primary">Academic Projects</h3>
+            <FaChartLine className="text-secondary text-2xl mr-3" />
+            <h3 className="text-2xl font-bold text-primary">Analytics Projects</h3>
           </div>
           
           <motion.div 
@@ -118,7 +160,7 @@ const Projects = () => {
             viewport={{ once: true, amount: 0.1 }}
           >
             {projects
-              .filter(project => project.type === "academic")
+              .filter(project => project.type === "analytics")
               .map((project) => (
                 <motion.div 
                   key={project.id}
@@ -129,16 +171,7 @@ const Projects = () => {
                   <h3 className="text-xl font-bold text-primary mb-3">{project.title}</h3>
                   <p className="text-gray-700 mb-4">{project.summary}</p>
                   
-                  <div className="flex flex-wrap mb-4">
-                    {project.tech.map((tech, index) => (
-                      <span 
-                        key={index}
-                        className="px-2 py-1 bg-gray-100 text-gray-700 text-sm rounded mr-2 mb-2"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  {renderTechItems(project.tech)}
                   
                   <button 
                     onClick={() => toggleProject(project.id)}
@@ -154,46 +187,46 @@ const Projects = () => {
                       transition={{ duration: 0.3 }}
                       className="mt-4"
                     >
-                      <div className="border-t border-gray-200 pt-4">
-                        <div className="mb-4">
-                          <div className="flex items-start mb-2">
+                      <div className="border-t border-gray-200 pt-5">
+                        <div className="mb-6">
+                          <div className="flex items-start mb-3">
                             <FaLightbulb className="text-secondary mr-2 mt-1" />
                             <div>
-                              <span className="font-medium text-gray-700">Objective:</span>
-                              <p className="text-gray-700">{project.objective}</p>
+                              <span className="font-medium text-gray-700 text-lg mb-2 inline-block">Objective:</span>
+                              <div className="text-gray-700">{boldMetrics(project.objective)}</div>
                             </div>
                           </div>
                         </div>
                         
-                        <div className="mb-4">
-                          <div className="flex items-start mb-2">
-                            <FaCode className="text-secondary mr-2 mt-1" />
+                        <div className="mb-6">
+                          <div className="flex items-start mb-3">
+                            <FaTools className="text-secondary mr-2 mt-1" />
                             <div>
-                              <span className="font-medium text-gray-700">Details:</span>
-                              <p className="text-gray-700">{project.details}</p>
+                              <span className="font-medium text-gray-700 text-lg mb-2 inline-block">Details:</span>
+                              <div className="text-gray-700">{boldMetrics(project.details)}</div>
                             </div>
                           </div>
                         </div>
                         
-                        <div className="mb-4">
-                          <div className="flex items-start mb-2">
+                        <div className="mb-6">
+                          <div className="flex items-start mb-3">
                             <FaChartLine className="text-secondary mr-2 mt-1" />
                             <div>
-                              <span className="font-medium text-gray-700">Impact:</span>
-                              <p className="text-gray-700">{project.impact}</p>
+                              <span className="font-medium text-gray-700 text-lg mb-2 inline-block">Impact:</span>
+                              {renderImpact(project.impact)}
                             </div>
                           </div>
                         </div>
                         
-                        <div className="flex items-center">
+                        <div className="flex flex-wrap gap-4 mt-4">
                           {project.github && (
                             <a 
                               href={project.github} 
                               target="_blank" 
                               rel="noopener noreferrer"
-                              className="flex items-center mr-4 text-primary hover:text-secondary transition-colors duration-300"
+                              className="flex items-center px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-md text-primary hover:text-secondary transition-all duration-300 mb-2"
                             >
-                              <FaGithub className="mr-1" />
+                              <FaGithub className="mr-2" />
                               <span>GitHub Repo</span>
                             </a>
                           )}
@@ -203,9 +236,9 @@ const Projects = () => {
                               href={project.demo} 
                               target="_blank" 
                               rel="noopener noreferrer"
-                              className="flex items-center text-primary hover:text-secondary transition-colors duration-300"
+                              className="flex items-center px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-md text-primary hover:text-secondary transition-all duration-300 mb-2"
                             >
-                              <FaExternalLinkAlt className="mr-1" />
+                              <FaExternalLinkAlt className="mr-2" />
                               <span>Live Demo</span>
                             </a>
                           )}
@@ -216,9 +249,9 @@ const Projects = () => {
                               href={link.url} 
                               target="_blank" 
                               rel="noopener noreferrer"
-                              className="flex items-center text-primary hover:text-secondary transition-colors duration-300 ml-4"
+                              className="flex items-center px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-md text-primary hover:text-secondary transition-all duration-300 mb-2"
                             >
-                              <FaExternalLinkAlt className="mr-1" />
+                              <FaExternalLinkAlt className="mr-2" />
                               <span>{link.title}</span>
                             </a>
                           ))}
@@ -232,11 +265,11 @@ const Projects = () => {
           </motion.div>
         </div>
         
-        {/* Personal BA Projects */}
+        {/* Personal Projects */}
         <div>
           <div className="flex items-center mb-8">
-            <FaChartBar className="text-secondary text-2xl mr-3" />
-            <h3 className="text-2xl font-bold text-primary">Personal BA Projects</h3>
+            <FaLightbulb className="text-secondary text-2xl mr-3" />
+            <h3 className="text-2xl font-bold text-primary">Personal Projects</h3>
           </div>
           
           <motion.div 
@@ -258,16 +291,7 @@ const Projects = () => {
                   <h3 className="text-xl font-bold text-primary mb-3">{project.title}</h3>
                   <p className="text-gray-700 mb-4">{project.summary}</p>
                   
-                  <div className="flex flex-wrap mb-4">
-                    {project.tech.map((tech, index) => (
-                      <span 
-                        key={index}
-                        className="px-2 py-1 bg-gray-100 text-gray-700 text-sm rounded mr-2 mb-2"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  {renderTechItems(project.tech)}
                   
                   <button 
                     onClick={() => toggleProject(project.id)}
@@ -283,46 +307,46 @@ const Projects = () => {
                       transition={{ duration: 0.3 }}
                       className="mt-4"
                     >
-                      <div className="border-t border-gray-200 pt-4">
-                        <div className="mb-4">
-                          <div className="flex items-start mb-2">
+                      <div className="border-t border-gray-200 pt-5">
+                        <div className="mb-6">
+                          <div className="flex items-start mb-3">
                             <FaLightbulb className="text-secondary mr-2 mt-1" />
                             <div>
-                              <span className="font-medium text-gray-700">Objective:</span>
-                              <p className="text-gray-700">{project.objective}</p>
+                              <span className="font-medium text-gray-700 text-lg mb-2 inline-block">Objective:</span>
+                              <div className="text-gray-700">{boldMetrics(project.objective)}</div>
                             </div>
                           </div>
                         </div>
                         
-                        <div className="mb-4">
-                          <div className="flex items-start mb-2">
-                            <FaCode className="text-secondary mr-2 mt-1" />
+                        <div className="mb-6">
+                          <div className="flex items-start mb-3">
+                            <FaTools className="text-secondary mr-2 mt-1" />
                             <div>
-                              <span className="font-medium text-gray-700">Details:</span>
-                              <p className="text-gray-700">{project.details}</p>
+                              <span className="font-medium text-gray-700 text-lg mb-2 inline-block">Details:</span>
+                              <div className="text-gray-700">{boldMetrics(project.details)}</div>
                             </div>
                           </div>
                         </div>
                         
-                        <div className="mb-4">
-                          <div className="flex items-start mb-2">
+                        <div className="mb-6">
+                          <div className="flex items-start mb-3">
                             <FaChartLine className="text-secondary mr-2 mt-1" />
                             <div>
-                              <span className="font-medium text-gray-700">Impact:</span>
-                              <p className="text-gray-700">{project.impact}</p>
+                              <span className="font-medium text-gray-700 text-lg mb-2 inline-block">Impact:</span>
+                              {renderImpact(project.impact)}
                             </div>
                           </div>
                         </div>
                         
-                        <div className="flex items-center">
+                        <div className="flex flex-wrap gap-4 mt-4">
                           {project.github && (
                             <a 
                               href={project.github} 
                               target="_blank" 
                               rel="noopener noreferrer"
-                              className="flex items-center mr-4 text-primary hover:text-secondary transition-colors duration-300"
+                              className="flex items-center px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-md text-primary hover:text-secondary transition-all duration-300 mb-2"
                             >
-                              <FaGithub className="mr-1" />
+                              <FaGithub className="mr-2" />
                               <span>GitHub Repo</span>
                             </a>
                           )}
@@ -332,12 +356,25 @@ const Projects = () => {
                               href={project.demo} 
                               target="_blank" 
                               rel="noopener noreferrer"
-                              className="flex items-center text-primary hover:text-secondary transition-colors duration-300"
+                              className="flex items-center px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-md text-primary hover:text-secondary transition-all duration-300 mb-2"
                             >
-                              <FaExternalLinkAlt className="mr-1" />
+                              <FaExternalLinkAlt className="mr-2" />
                               <span>Live Demo</span>
                             </a>
                           )}
+                          
+                          {project.externalLinks && project.externalLinks.map((link, index) => (
+                            <a 
+                              key={index}
+                              href={link.url} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="flex items-center px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-md text-primary hover:text-secondary transition-all duration-300 mb-2"
+                            >
+                              <FaExternalLinkAlt className="mr-2" />
+                              <span>{link.title}</span>
+                            </a>
+                          ))}
                         </div>
                       </div>
                     </motion.div>

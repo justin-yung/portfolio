@@ -24,7 +24,7 @@ const About = () => {
   const interests = [
     { 
       name: "Data Visualisation", 
-      description: "Creating meaningful visual representations of data to help identify patterns and insights. I enjoy using tools like Power BI and Tableau to transform complex datasets into clear, actionable visualizations." 
+      description: "Creating meaningful visual representations of data to help identify patterns and insights. I enjoy using tools like Power BI to transform complex datasets into clear, actionable visualisations." 
     },
     { 
       name: "Process Optimisation", 
@@ -98,6 +98,8 @@ const About = () => {
             <p className="text-gray-700 mb-6 leading-relaxed text-lg">
             Analytical and results-driven Operations Support Analyst with hands-on experience in <b>SQL, Power BI, and stakeholder engagement</b>. 
             Professionally certified in Business Analysis (ECBA®) and a Bachelor of Commerce graduate from The University of Queensland, majoring in Business Information Systems and Finance. 
+            </p>
+            <p className="text-gray-700 mb-6 leading-relaxed text-lg">
             Proven ability to <b>optimise business processes, lead cross-functional teams, </b>and<b> deliver data-driven insights</b> to support operational decision-making. 
             Demonstrated success in procurement operations, cost reduction initiatives, and stakeholder communication. 
             Fluent in English, Mandarin, and Cantonese, with strong technical and interpersonal skills to support scalable and efficient business outcomes.
@@ -124,13 +126,13 @@ const About = () => {
             {/* Location & Work Eligibility */}
             <h3 className="text-2xl font-bold mb-4 text-primary">Location & Work Eligibility</h3>
             <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
+                <div className="flex items-center">
+                <FaPassport className="text-secondary mr-2" />
+                <span className="text-gray-700">Australian Citizen</span>
+              </div>
               <div className="flex items-center mb-2">
                 <FaMapMarkerAlt className="text-secondary mr-2" />
                 <span className="text-gray-700">Brisbane, Australia | Open to relocate to Metro Sydney and Melbourne Areas</span>
-              </div>
-              <div className="flex items-center">
-                <FaPassport className="text-secondary mr-2" />
-                <span className="text-gray-700">Australian Citizen</span>
               </div>
             </div>
           </motion.div>

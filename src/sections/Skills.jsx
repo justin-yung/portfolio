@@ -61,7 +61,7 @@ const Skills = () => {
     <section id="skills" className="py-20 bg-gray-50">
       <div className="section-container">
         <motion.div
-          className="flex justify-center mb-16"
+          className="flex justify-center mb-10"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

@@ -890,7 +890,7 @@ nav.scrolled {
 @keyframes modalFadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -967,21 +967,21 @@ nav.scrolled {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Multiple modal positioning */
-.interest-modal-overlay:nth-child(odd) .interest-modal {
-  transform: translateX(-5%) translateY(0);
+/* Multiple modal positioning with subtle stacking for depth */
+.interest-modal-overlay:nth-child(2) {
+  z-index: 1001;
 }
 
-.interest-modal-overlay:nth-child(even) .interest-modal {
-  transform: translateX(5%) translateY(0);
+.interest-modal-overlay:nth-child(3) {
+  z-index: 1002;
 }
 
-.interest-modal-overlay:nth-child(3n) .interest-modal {
-  transform: translateX(0) translateY(-5%);
+.interest-modal-overlay:nth-child(4) {
+  z-index: 1003;
 }
 
-.interest-modal-overlay:nth-child(4n) .interest-modal {
-  transform: translateX(0) translateY(5%);
+.interest-modal-overlay:nth-child(5) {
+  z-index: 1004;
 }
 
 /* Contact section styling */

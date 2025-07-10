@@ -53,7 +53,7 @@ const Experience = () => {
       period: "Feb 2020 - Jul 2023",
       major: "Major in Business Information Systems, Finance",
       gpa: "GPA <b>5.3/7.0</b>",
-      details: "Developed strong analytical and problem-solving skills through coursework in database management, systems analysis, and financial modelling. Participated in <b>multiple</b> business case competitions and collaborated on group projects simulating real-world business scenarios."
+      details: "Excelled and developed strong analytical and problem-solving skills through coursework in data analytics, systems analysis, process management, and financial modelling. Collaborated on group projects simulating real-world business scenarios."
     }
   ];
 
